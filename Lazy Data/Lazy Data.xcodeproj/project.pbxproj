@@ -12,7 +12,7 @@
 		B4123E801C95EE8600D2E0A3 /* LazyData+Insert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E7F1C95EE8600D2E0A3 /* LazyData+Insert.swift */; };
 		B4123E821C95EE9200D2E0A3 /* LazyData+Delete.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E811C95EE9200D2E0A3 /* LazyData+Delete.swift */; };
 		B4123E841C95EEA300D2E0A3 /* LazyData+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E831C95EEA300D2E0A3 /* LazyData+Update.swift */; };
-		B4C99B861C951578003A3379 /* Lazy Data.h in Headers */ = {isa = PBXBuildFile; fileRef = B4C99B851C951578003A3379 /* Lazy Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4123E881C96205100D2E0A3 /* LazyData.swift in Headers */ = {isa = PBXBuildFile; fileRef = B4123E011C953C3500D2E0A3 /* LazyData.swift */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4C99B8D1C951578003A3379 /* LazyData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C99B821C951578003A3379 /* LazyData.framework */; };
 		B4C99B921C951578003A3379 /* Lazy_DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C99B911C951578003A3379 /* Lazy_DataTests.swift */; };
 /* End PBXBuildFile section */
@@ -33,7 +33,7 @@
 		B4123E811C95EE9200D2E0A3 /* LazyData+Delete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+Delete.swift"; sourceTree = "<group>"; };
 		B4123E831C95EEA300D2E0A3 /* LazyData+Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+Update.swift"; sourceTree = "<group>"; };
 		B4C99B821C951578003A3379 /* LazyData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4C99B851C951578003A3379 /* Lazy Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lazy Data.h"; sourceTree = "<group>"; };
+		B4C99B851C951578003A3379 /* LazyData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyData.h; sourceTree = "<group>"; };
 		B4C99B871C951578003A3379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4C99B8C1C951578003A3379 /* LazyDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C99B911C951578003A3379 /* Lazy_DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lazy_DataTests.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		B4C99B841C951578003A3379 /* Lazy Data */ = {
 			isa = PBXGroup;
 			children = (
-				B4C99B851C951578003A3379 /* Lazy Data.h */,
+				B4C99B851C951578003A3379 /* LazyData.h */,
 				B4C99B871C951578003A3379 /* Info.plist */,
 				B4123E011C953C3500D2E0A3 /* LazyData.swift */,
 				B4123E7F1C95EE8600D2E0A3 /* LazyData+Insert.swift */,
@@ -108,7 +108,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4C99B861C951578003A3379 /* Lazy Data.h in Headers */,
+				B4123E881C96205100D2E0A3 /* LazyData.swift in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +163,7 @@
 				TargetAttributes = {
 					B4C99B811C951578003A3379 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 5TXH73B266;
 					};
 					B4C99B8B1C951578003A3379 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -328,6 +329,9 @@
 		B4C99B971C951578003A3379 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -338,6 +342,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcosrdz.LazyData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -345,6 +350,9 @@
 		B4C99B981C951578003A3379 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -355,6 +363,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.marcosrdz.LazyData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
