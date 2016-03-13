@@ -7,10 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4123E021C953C3500D2E0A3 /* LazyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E011C953C3500D2E0A3 /* LazyData.swift */; };
+		B4123E041C953F1C00D2E0A3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B4C99B9C1C951615003A3379 /* README.md */; };
 		B4C99B861C951578003A3379 /* Lazy Data.h in Headers */ = {isa = PBXBuildFile; fileRef = B4C99B851C951578003A3379 /* Lazy Data.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B4C99B8D1C951578003A3379 /* Lazy Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C99B821C951578003A3379 /* Lazy Data.framework */; };
+		B4C99B8D1C951578003A3379 /* LazyData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C99B821C951578003A3379 /* LazyData.framework */; };
 		B4C99B921C951578003A3379 /* Lazy_DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C99B911C951578003A3379 /* Lazy_DataTests.swift */; };
-		B4C99B9D1C951615003A3379 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B4C99B9C1C951615003A3379 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,10 +25,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B4C99B821C951578003A3379 /* Lazy Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Lazy Data.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4123E011C953C3500D2E0A3 /* LazyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyData.swift; sourceTree = "<group>"; };
+		B4C99B821C951578003A3379 /* LazyData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C99B851C951578003A3379 /* Lazy Data.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lazy Data.h"; sourceTree = "<group>"; };
 		B4C99B871C951578003A3379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B4C99B8C1C951578003A3379 /* Lazy DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Lazy DataTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4C99B8C1C951578003A3379 /* LazyDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C99B911C951578003A3379 /* Lazy_DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lazy_DataTests.swift; sourceTree = "<group>"; };
 		B4C99B931C951578003A3379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4C99B9C1C951615003A3379 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -45,7 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4C99B8D1C951578003A3379 /* Lazy Data.framework in Frameworks */,
+				B4C99B8D1C951578003A3379 /* LazyData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,8 +67,8 @@
 		B4C99B831C951578003A3379 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B4C99B821C951578003A3379 /* Lazy Data.framework */,
-				B4C99B8C1C951578003A3379 /* Lazy DataTests.xctest */,
+				B4C99B821C951578003A3379 /* LazyData.framework */,
+				B4C99B8C1C951578003A3379 /* LazyDataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +78,7 @@
 			children = (
 				B4C99B851C951578003A3379 /* Lazy Data.h */,
 				B4C99B871C951578003A3379 /* Info.plist */,
+				B4123E011C953C3500D2E0A3 /* LazyData.swift */,
 			);
 			path = "Lazy Data";
 			sourceTree = "<group>";
@@ -103,9 +106,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		B4C99B811C951578003A3379 /* Lazy Data */ = {
+		B4C99B811C951578003A3379 /* LazyData */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B4C99B961C951578003A3379 /* Build configuration list for PBXNativeTarget "Lazy Data" */;
+			buildConfigurationList = B4C99B961C951578003A3379 /* Build configuration list for PBXNativeTarget "LazyData" */;
 			buildPhases = (
 				B4C99B7D1C951578003A3379 /* Sources */,
 				B4C99B7E1C951578003A3379 /* Frameworks */,
@@ -116,14 +119,14 @@
 			);
 			dependencies = (
 			);
-			name = "Lazy Data";
+			name = LazyData;
 			productName = "Lazy Data";
-			productReference = B4C99B821C951578003A3379 /* Lazy Data.framework */;
+			productReference = B4C99B821C951578003A3379 /* LazyData.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B4C99B8B1C951578003A3379 /* Lazy DataTests */ = {
+		B4C99B8B1C951578003A3379 /* LazyDataTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B4C99B991C951578003A3379 /* Build configuration list for PBXNativeTarget "Lazy DataTests" */;
+			buildConfigurationList = B4C99B991C951578003A3379 /* Build configuration list for PBXNativeTarget "LazyDataTests" */;
 			buildPhases = (
 				B4C99B881C951578003A3379 /* Sources */,
 				B4C99B891C951578003A3379 /* Frameworks */,
@@ -134,9 +137,9 @@
 			dependencies = (
 				B4C99B8F1C951578003A3379 /* PBXTargetDependency */,
 			);
-			name = "Lazy DataTests";
+			name = LazyDataTests;
 			productName = "Lazy DataTests";
-			productReference = B4C99B8C1C951578003A3379 /* Lazy DataTests.xctest */;
+			productReference = B4C99B8C1C951578003A3379 /* LazyDataTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -169,8 +172,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B4C99B811C951578003A3379 /* Lazy Data */,
-				B4C99B8B1C951578003A3379 /* Lazy DataTests */,
+				B4C99B811C951578003A3379 /* LazyData */,
+				B4C99B8B1C951578003A3379 /* LazyDataTests */,
 			);
 		};
 /* End PBXProject section */
@@ -180,6 +183,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4123E041C953F1C00D2E0A3 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +201,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4C99B9D1C951615003A3379 /* README.md in Sources */,
+				B4123E021C953C3500D2E0A3 /* LazyData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,7 +218,7 @@
 /* Begin PBXTargetDependency section */
 		B4C99B8F1C951578003A3379 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = B4C99B811C951578003A3379 /* Lazy Data */;
+			target = B4C99B811C951578003A3379 /* LazyData */;
 			targetProxy = B4C99B8E1C951578003A3379 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -318,8 +322,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Lazy Data/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.marcosrdz.Lazy-Data";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcosrdz.LazyData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -334,8 +339,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Lazy Data/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.marcosrdz.Lazy-Data";
+				PRODUCT_BUNDLE_IDENTIFIER = com.marcosrdz.LazyData;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -373,21 +379,23 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B4C99B961C951578003A3379 /* Build configuration list for PBXNativeTarget "Lazy Data" */ = {
+		B4C99B961C951578003A3379 /* Build configuration list for PBXNativeTarget "LazyData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B4C99B971C951578003A3379 /* Debug */,
 				B4C99B981C951578003A3379 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
-		B4C99B991C951578003A3379 /* Build configuration list for PBXNativeTarget "Lazy DataTests" */ = {
+		B4C99B991C951578003A3379 /* Build configuration list for PBXNativeTarget "LazyDataTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B4C99B9A1C951578003A3379 /* Debug */,
 				B4C99B9B1C951578003A3379 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
