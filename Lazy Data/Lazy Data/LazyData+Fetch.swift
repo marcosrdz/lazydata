@@ -1,5 +1,5 @@
 //
-//  LazyData+Update.swift
+//  LazyData+Fetch.swift
 //  Lazy Data
 //
 //  Created by Marcos Rodriguez on 3/13/16.

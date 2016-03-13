@@ -10,9 +10,13 @@ import Foundation
 
 extension LazyData {
     
-    
     // MARK: - Delete all objects in Managed Context.
     class func deleteAllObjects() {
+        
+    }
+    
+    // MARK: - Reset the Managed Context.
+    public class func reset() {
         
     }
     

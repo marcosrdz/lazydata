@@ -28,11 +28,6 @@ public class LazyData {
             return LazyData.sharedInstance.dataModelName
         }
     }
-    
-    // MARK: - Reset the Managed Context.
-    public class func reset() {
-        
-    }
         
     // MARK: - Core Data Boilerplate Code
     private lazy var applicationDocumentsDirectory: NSURL = {
