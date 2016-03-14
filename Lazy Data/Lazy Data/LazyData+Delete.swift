@@ -7,12 +7,29 @@
 //
 
 import Foundation
+import CoreData
 
 extension LazyData {
     
     // MARK: - Delete all objects in Managed Context.
-    class func deleteAllObjects() {
-        
+    public class func deleteAllObjects() {
+        for entity in LazyData.sharedInstance.managedObjectModel.entities {
+            if let entityName = entity.name {
+                let deleteRequest = NSBatchDeleteRequest(fetchRequest: NSFetchRequest(entityName: entityName))
+                do {
+                    try LazyData.sharedInstance.managedObjectContext.executeRequest(deleteRequest)
+                }
+                catch {
+                    print("LAZYDATA ERROR DELETING ALL OBJECTS: \(error)")
+                }
+            }
+        }
+    }
+    
+    // MARK: - Delete the passed object from the Managed Context
+    public class func deleteObject(object: NSManagedObject) {
+        LazyData.sharedInstance.managedObjectContext.deleteObject(object)
+        LazyData.save()
     }
     
     // MARK: - Reset the Managed Context.
