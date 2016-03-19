@@ -13,14 +13,16 @@ extension LazyData {
     
     // MARK: - Delete all objects in Managed Context.
     public class func deleteAllObjects() {
-        for entity in LazyData.sharedInstance.managedObjectModel.entities {
-            if let entityName = entity.name {
-                let deleteRequest = NSBatchDeleteRequest(fetchRequest: NSFetchRequest(entityName: entityName))
-                do {
-                    try LazyData.sharedInstance.managedObjectContext.executeRequest(deleteRequest)
-                }
-                catch {
-                    print("LAZYDATA ERROR DELETING ALL OBJECTS: \(error)")
+        if let entities = LazyData.allEntities() {
+            for entity in entities {
+                if let entityName = entity.name {
+                    let deleteRequest = NSBatchDeleteRequest(fetchRequest: NSFetchRequest(entityName: entityName))
+                    do {
+                        try LazyData.sharedInstance.managedObjectContext.executeRequest(deleteRequest)
+                    }
+                    catch {
+                        print("LAZYDATA ERROR DELETING ALL OBJECTS: \(error)")
+                    }
                 }
             }
         }

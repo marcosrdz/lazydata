@@ -14,6 +14,11 @@
 		B4123E841C95EEA300D2E0A3 /* LazyData+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E831C95EEA300D2E0A3 /* LazyData+Update.swift */; };
 		B4123E961C9635AF00D2E0A3 /* LazyData+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E951C9635AF00D2E0A3 /* LazyData+Fetch.swift */; };
 		B4123E981C96363800D2E0A3 /* LazyData+FetchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E971C96363800D2E0A3 /* LazyData+FetchResultsController.swift */; };
+		B4C79D4F1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D4D1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld */; };
+		B4C79D541C9D0B8C00817217 /* Color+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D501C9D0B8C00817217 /* Color+CoreDataProperties.swift */; };
+		B4C79D551C9D0B8C00817217 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D511C9D0B8C00817217 /* Color.swift */; };
+		B4C79D561C9D0B8C00817217 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D521C9D0B8C00817217 /* Person+CoreDataProperties.swift */; };
+		B4C79D571C9D0B8C00817217 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D531C9D0B8C00817217 /* Person.swift */; };
 		B4C99B8D1C951578003A3379 /* LazyData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4C99B821C951578003A3379 /* LazyData.framework */; };
 		B4C99B921C951578003A3379 /* Lazy_DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C99B911C951578003A3379 /* Lazy_DataTests.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +40,11 @@
 		B4123E831C95EEA300D2E0A3 /* LazyData+Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+Update.swift"; sourceTree = "<group>"; };
 		B4123E951C9635AF00D2E0A3 /* LazyData+Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+Fetch.swift"; sourceTree = "<group>"; };
 		B4123E971C96363800D2E0A3 /* LazyData+FetchResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+FetchResultsController.swift"; sourceTree = "<group>"; };
+		B4C79D4E1C9D0AD300817217 /* LazyDataTestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LazyDataTestModel.xcdatamodel; sourceTree = "<group>"; };
+		B4C79D501C9D0B8C00817217 /* Color+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B4C79D511C9D0B8C00817217 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		B4C79D521C9D0B8C00817217 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B4C79D531C9D0B8C00817217 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B4C99B821C951578003A3379 /* LazyData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LazyData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C99B851C951578003A3379 /* LazyData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LazyData.h; sourceTree = "<group>"; };
 		B4C99B871C951578003A3379 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,6 +110,11 @@
 		B4C99B901C951578003A3379 /* Lazy DataTests */ = {
 			isa = PBXGroup;
 			children = (
+				B4C79D501C9D0B8C00817217 /* Color+CoreDataProperties.swift */,
+				B4C79D511C9D0B8C00817217 /* Color.swift */,
+				B4C79D521C9D0B8C00817217 /* Person+CoreDataProperties.swift */,
+				B4C79D531C9D0B8C00817217 /* Person.swift */,
+				B4C79D4D1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld */,
 				B4C99B911C951578003A3379 /* Lazy_DataTests.swift */,
 				B4C99B931C951578003A3379 /* Info.plist */,
 			);
@@ -228,7 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4C79D571C9D0B8C00817217 /* Person.swift in Sources */,
 				B4C99B921C951578003A3379 /* Lazy_DataTests.swift in Sources */,
+				B4C79D561C9D0B8C00817217 /* Person+CoreDataProperties.swift in Sources */,
+				B4C79D551C9D0B8C00817217 /* Color.swift in Sources */,
+				B4C79D4F1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld in Sources */,
+				B4C79D541C9D0B8C00817217 /* Color+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +445,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B4C79D4D1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B4C79D4E1C9D0AD300817217 /* LazyDataTestModel.xcdatamodel */,
+			);
+			currentVersion = B4C79D4E1C9D0AD300817217 /* LazyDataTestModel.xcdatamodel */;
+			path = LazyDataTestModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B4C99B791C951578003A3379 /* Project object */;
 }
