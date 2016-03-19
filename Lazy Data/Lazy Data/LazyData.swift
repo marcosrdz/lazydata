@@ -13,7 +13,7 @@ public class LazyData: NSObject {
     
     // MARK: - Singleton
     /*This is the instance, of LazyData, that will be used all the time. */
-    public static let sharedInstance = LazyData()
+    public static let sharedInstance: LazyData = LazyData()
     private var dataModelName: String = ""
     
     private lazy var managedObjectModel: NSManagedObjectModel = {
@@ -21,31 +21,13 @@ public class LazyData: NSObject {
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
     
-    public class func allEntities() -> [NSEntityDescription]? {
-        return LazyData.sharedInstance.managedObjectModel.entities
-    }
-    
     public class func dataModel(name name: String) {
         LazyData.sharedInstance.dataModelName = name
     }
     
-    public class func insertObject(entityName entityName: String, dictionary: [String: AnyObject]) {
-        let entityDescription = NSEntityDescription.entityForName(entityName, inManagedObjectContext: LazyData.sharedInstance.managedObjectContext)
-        
-        for (key, value) in dictionary {
-            let object = NSManagedObject(entity: entityDescription!, insertIntoManagedObjectContext: LazyData.sharedInstance.managedObjectContext)
-            object.willAccessValueForKey(key)
-            object.willChangeValueForKey(key)
-            object.setValue(value, forKeyPath: key)
-            object.didChangeValueForKey(key)
-            LazyData.sharedInstance.managedObjectContext.insertObject(object)
-        }
-        LazyData.save()
-    }
-    
     // MARK: - Core Data Boilerplate Code
     
-    lazy var applicationDocumentsDirectory: NSURL = {
+    private lazy var applicationDocumentsDirectory: NSURL = {
         return NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).last!
     }()
     
@@ -73,7 +55,7 @@ public class LazyData: NSObject {
         return managedObjectContext
     }()
     
-    // MARK: - Core Data Saving support
+    // MARK: - Core Data Save
     public class func save() {
         if LazyData.sharedInstance.managedObjectContext.hasChanges {
             do {
@@ -85,6 +67,11 @@ public class LazyData: NSObject {
             }
         }
     }
-
+    
+    // MARK: - Fetch All Entities
+    
+    public class func allEntities() -> [NSEntityDescription]? {
+        return LazyData.sharedInstance.managedObjectModel.entities
+    }
     
 }
