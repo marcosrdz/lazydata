@@ -34,7 +34,7 @@ public class LazyData: NSObject {
     private lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator = {
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: LazyData.sharedInstance.managedObjectModel)
         
-        let persistentStoreURL = LazyData.sharedInstance.applicationDocumentsDirectory.URLByAppendingPathComponent("\(self.dataModelName).sqlite")
+        let persistentStoreURL = LazyData.sharedInstance.applicationDocumentsDirectory.URLByAppendingPathComponent("\(LazyData.sharedInstance.dataModelName).sqlite")
         
         do {
             try coordinator.addPersistentStoreWithType(NSSQLiteStoreType,
@@ -49,23 +49,46 @@ public class LazyData: NSObject {
         return coordinator
     }()
     
+    
+    // MARK: - Managed Object Contexts
+    private lazy var privateManagedObjectContext: NSManagedObjectContext = {
+        let managedObjectContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
+        managedObjectContext.persistentStoreCoordinator = LazyData.sharedInstance.persistentStoreCoordinator
+        return managedObjectContext
+    }()
+    
     lazy var managedObjectContext: NSManagedObjectContext = {
         let managedObjectContext = NSManagedObjectContext(concurrencyType: .MainQueueConcurrencyType)
-        managedObjectContext.persistentStoreCoordinator = sharedInstance.persistentStoreCoordinator
+        managedObjectContext.parentContext = LazyData.sharedInstance.privateManagedObjectContext
         return managedObjectContext
     }()
     
     // MARK: - Core Data Save
     public class func save() {
-        if LazyData.sharedInstance.managedObjectContext.hasChanges {
+        guard LazyData.sharedInstance.managedObjectContext.hasChanges || LazyData.sharedInstance.privateManagedObjectContext.hasChanges else {
+            return
+        }
+        
+        LazyData.sharedInstance.managedObjectContext.performBlockAndWait() {
             do {
                 try LazyData.sharedInstance.managedObjectContext.save()
             } catch {
-                let nserror = error as NSError
-                NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
-                abort()
+                fatalError("Error saving main managed object context! \(error)")
             }
         }
+        
+        LazyData.sharedInstance.privateManagedObjectContext.performBlock() {
+            do {
+                try LazyData.sharedInstance.privateManagedObjectContext.save()
+            } catch {
+                fatalError("Error saving private managed object context! \(error)")
+            }
+        }
+        
+        LazyData.sharedInstance.managedObjectContext.performBlockAndWait { () -> Void in
+            
+        }
+        
     }
     
     // MARK: - Fetch All Entities

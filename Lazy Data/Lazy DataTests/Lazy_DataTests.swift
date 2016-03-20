@@ -26,4 +26,26 @@ class LazyDataTests: XCTestCase {
         print("\n")
     }
     
+    func testDeleteAllObjects() {
+        print("Before deleting:")
+        for entity in LazyData.allEntities()! {
+            for object in LazyData.fetchObjects(entityName: entity.name!)! {
+                print("\nID: \(object.valueForKeyPath("id"))")
+                print("\nName: \(object.valueForKeyPath("name"))")
+                print("\n")
+            }
+        }
+
+        LazyData.deleteAllObjects()
+        
+        print("After deleting")
+        for entity in LazyData.allEntities()! {
+            for object in LazyData.fetchObjects(entityName: entity.name!)! {
+                print("\nID: \(object.valueForKeyPath("id"))")
+                print("\nName: \(object.valueForKeyPath("name"))")
+                print("\n")
+            }
+        }
+    }
+    
 }
