@@ -36,7 +36,7 @@ extension LazyData {
     
     // MARK: - Reset the Managed Context.
     public class func reset() {
-        
+        LazyData.sharedInstance.managedObjectContext.reset()
     }
     
 }
