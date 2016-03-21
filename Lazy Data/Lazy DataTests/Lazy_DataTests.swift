@@ -48,4 +48,18 @@ class LazyDataTests: XCTestCase {
         }
     }
     
+    func testFetchedResultsControllerWithNoParameters() {
+        LazyData.insertObject(entityName: "Person", dictionary: ["name": "Foo"])
+        let controller = LazyData.fetchedResultsController(entityName: "Person")
+        
+        print("Controller: \(controller)")
+    }
+    
+    func testFetchedResultsController() {
+        LazyData.insertObject(entityName: "Person", dictionary: ["name": "Foo"])
+        let controller = LazyData.fetchedResultsController(entityName: "Person", predicate: nil, fetchLimit: nil, offset: nil, sortBy: [NSSortDescriptor(key: "name", ascending: true)], separateSectionsByKey: "name", cacheName: nil)
+        
+        print("Controller: \(controller)")
+    }
+    
 }
