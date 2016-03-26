@@ -11,18 +11,24 @@ import CoreData
 
 public class LazyData: NSObject {
     
+    public enum LazyDataStoreType: Int {
+        case Persistent = 0, Temporary
+    }
+    
     // MARK: - Singleton
     /*This is the instance, of LazyData, that will be used all the time. */
     public static let sharedInstance: LazyData = LazyData()
     private var dataModelName: String = ""
+    private var storeType: LazyDataStoreType = .Persistent
     
     private lazy var managedObjectModel: NSManagedObjectModel = {
         let modelURL = NSBundle(forClass: self.dynamicType).URLForResource(LazyData.sharedInstance.dataModelName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
     
-    public class func dataModel(name name: String) {
+    public class func configure(name name: String, storeType: LazyDataStoreType) {
         LazyData.sharedInstance.dataModelName = name
+        LazyData.sharedInstance.storeType = storeType
     }
     
     // MARK: - Core Data Boilerplate Code
@@ -37,12 +43,24 @@ public class LazyData: NSObject {
         let persistentStoreURL = LazyData.sharedInstance.applicationDocumentsDirectory.URLByAppendingPathComponent("\(LazyData.sharedInstance.dataModelName).sqlite")
         
         do {
-            try coordinator.addPersistentStoreWithType(NSSQLiteStoreType,
-                configuration: nil,
-                URL: persistentStoreURL,
-                options: [NSMigratePersistentStoresAutomaticallyOption: true,
-                    NSInferMappingModelAutomaticallyOption: true])
-        } catch {
+            switch LazyData.sharedInstance.storeType {
+            case .Persistent:
+                do {
+                    try coordinator.addPersistentStoreWithType(NSSQLiteStoreType,
+                                                               configuration: nil,
+                                                               URL: persistentStoreURL,
+                                                               options: [NSMigratePersistentStoresAutomaticallyOption: true,
+                                                                NSInferMappingModelAutomaticallyOption: true])
+                }
+            case .Temporary:
+                try coordinator.addPersistentStoreWithType(NSInMemoryStoreType,
+                                                           configuration: nil,
+                                                           URL: nil,
+                                                           options: [NSMigratePersistentStoresAutomaticallyOption: true,
+                                                            NSInferMappingModelAutomaticallyOption: true])
+            }
+        }
+        catch {
             fatalError("Persistent store error! \(error)")
         }
         

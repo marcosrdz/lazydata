@@ -13,7 +13,7 @@ class LazyDataTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        LazyData.dataModel(name: "LazyDataTestModel")
+        LazyData.configure(name: "LazyDataTestModel", storeType: .Temporary)
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
@@ -48,14 +48,14 @@ class LazyDataTests: XCTestCase {
         }
     }
     
-    func testFetchedResultsControllerWithNoParameters() {
+    func testFetchedResultsController() {
         LazyData.insertObject(entityName: "Person", dictionary: ["name": "Foo"])
         let controller = LazyData.fetchedResultsController(entityName: "Person")
         
         print("Controller: \(controller)")
     }
     
-    func testFetchedResultsController() {
+    func testFetchedResultsControllerWithParameters() {
         LazyData.insertObject(entityName: "Person", dictionary: ["name": "Foo"])
         let controller = LazyData.fetchedResultsController(entityName: "Person", predicate: nil, fetchLimit: nil, offset: nil, sortBy: [NSSortDescriptor(key: "name", ascending: true)], separateSectionsByKey: "name", cacheName: nil)
         
