@@ -26,8 +26,8 @@ public class LazyData: NSObject {
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
     
-    public class func configure(name name: String, storeType: LazyDataStoreType) {
-        LazyData.sharedInstance.dataModelName = name
+    public class func configure(dataModelName dataModelName: String, storeType: LazyDataStoreType) {
+        LazyData.sharedInstance.dataModelName = dataModelName
         LazyData.sharedInstance.storeType = storeType
     }
     

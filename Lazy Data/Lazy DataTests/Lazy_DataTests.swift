@@ -13,7 +13,7 @@ class LazyDataTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        LazyData.configure(name: "LazyDataTestModel", storeType: .Temporary)
+        LazyData.configure(dataModelName: "LazyDataTestModel", storeType: .Temporary)
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
