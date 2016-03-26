@@ -27,8 +27,15 @@ public class LazyData: NSObject {
     }()
     
     public class func configure(dataModelName dataModelName: String, storeType: LazyDataStoreType) {
-        LazyData.sharedInstance.dataModelName = dataModelName
+        /* Reset the managed object context if the passed storeType is temporary, or if it previously was persistent, but it'll now change to temporary. */
+        if storeType == .Temporary || (LazyData.sharedInstance.storeType == .Persistent && storeType == .Temporary) {
+            LazyData.reset()
+            LazyData.save()
+        }
+        /* */
+        
         LazyData.sharedInstance.storeType = storeType
+        LazyData.sharedInstance.dataModelName = dataModelName
     }
     
     // MARK: - Core Data Boilerplate Code
