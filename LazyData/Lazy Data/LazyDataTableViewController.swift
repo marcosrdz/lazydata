@@ -34,7 +34,7 @@ public protocol LazyDataTableViewDataSource: class {
     
     // MARK: - Initializer
     
-    init?(tableView: UITableView, fetchedResultsController: NSFetchedResultsController) {
+    public init?(tableView: UITableView, fetchedResultsController: NSFetchedResultsController) {
         do {
             try fetchedResultsController.performFetch()
             self.tableView = tableView
