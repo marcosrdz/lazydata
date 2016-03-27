@@ -110,9 +110,9 @@
 				B4123E811C95EE9200D2E0A3 /* LazyData+Delete.swift */,
 				B4123E951C9635AF00D2E0A3 /* LazyData+Fetch.swift */,
 				B4123E971C96363800D2E0A3 /* LazyData+FetchedResultsController.swift */,
-				B454D3C21CA65B4800C710AD /* LazyDataTableViewController.swift */,
 				B4123E7F1C95EE8600D2E0A3 /* LazyData+Insert.swift */,
 				B4123E831C95EEA300D2E0A3 /* LazyData+Update.swift */,
+				B454D3C21CA65B4800C710AD /* LazyDataTableViewController.swift */,
 			);
 			name = LazyData;
 			path = "Lazy Data";
