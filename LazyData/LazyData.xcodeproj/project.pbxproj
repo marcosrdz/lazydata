@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B401AFCD1CA89A85005D989B /* LazyData.h in Headers */ = {isa = PBXBuildFile; fileRef = B4C99B851C951578003A3379 /* LazyData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B401AFD11CA89B57005D989B /* LazyDataTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B401AFCF1CA89B57005D989B /* LazyDataTest.xcdatamodeld */; };
 		B4123E021C953C3500D2E0A3 /* LazyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E011C953C3500D2E0A3 /* LazyData.swift */; };
 		B4123E041C953F1C00D2E0A3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B4C99B9C1C951615003A3379 /* README.md */; };
 		B4123E801C95EE8600D2E0A3 /* LazyData+Insert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E7F1C95EE8600D2E0A3 /* LazyData+Insert.swift */; };
@@ -15,7 +17,8 @@
 		B4123E961C9635AF00D2E0A3 /* LazyData+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E951C9635AF00D2E0A3 /* LazyData+Fetch.swift */; };
 		B4123E981C96363800D2E0A3 /* LazyData+FetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E971C96363800D2E0A3 /* LazyData+FetchedResultsController.swift */; };
 		B454D3C31CA65B4800C710AD /* LazyDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B454D3C21CA65B4800C710AD /* LazyDataTableViewController.swift */; };
-		B4C79D4F1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D4D1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld */; };
+		B454D3CA1CA8934400C710AD /* LazyData.podspec in Resources */ = {isa = PBXBuildFile; fileRef = B454D3C91CA8934400C710AD /* LazyData.podspec */; };
+		B454D3CC1CA8946B00C710AD /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = B454D3CB1CA8946B00C710AD /* LICENSE */; };
 		B4C79D541C9D0B8C00817217 /* Color+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D501C9D0B8C00817217 /* Color+CoreDataProperties.swift */; };
 		B4C79D551C9D0B8C00817217 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D511C9D0B8C00817217 /* Color.swift */; };
 		B4C79D561C9D0B8C00817217 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D521C9D0B8C00817217 /* Person+CoreDataProperties.swift */; };
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B401AFD01CA89B57005D989B /* LazyDataTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LazyDataTest.xcdatamodel; sourceTree = "<group>"; };
 		B4123E011C953C3500D2E0A3 /* LazyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyData.swift; sourceTree = "<group>"; };
 		B4123E7F1C95EE8600D2E0A3 /* LazyData+Insert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+Insert.swift"; sourceTree = "<group>"; };
 		B4123E811C95EE9200D2E0A3 /* LazyData+Delete.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+Delete.swift"; sourceTree = "<group>"; };
@@ -42,7 +46,8 @@
 		B4123E951C9635AF00D2E0A3 /* LazyData+Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+Fetch.swift"; sourceTree = "<group>"; };
 		B4123E971C96363800D2E0A3 /* LazyData+FetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+FetchedResultsController.swift"; sourceTree = "<group>"; };
 		B454D3C21CA65B4800C710AD /* LazyDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyDataTableViewController.swift; sourceTree = "<group>"; };
-		B4C79D4E1C9D0AD300817217 /* LazyDataTestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LazyDataTestModel.xcdatamodel; sourceTree = "<group>"; };
+		B454D3C91CA8934400C710AD /* LazyData.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LazyData.podspec; path = ../LazyData.podspec; sourceTree = "<group>"; };
+		B454D3CB1CA8946B00C710AD /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		B4C79D501C9D0B8C00817217 /* Color+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B4C79D511C9D0B8C00817217 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		B4C79D521C9D0B8C00817217 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -78,9 +83,11 @@
 		B4C99B781C951578003A3379 = {
 			isa = PBXGroup;
 			children = (
+				B454D3CB1CA8946B00C710AD /* LICENSE */,
+				B454D3C91CA8934400C710AD /* LazyData.podspec */,
 				B4C99B9C1C951615003A3379 /* README.md */,
-				B4C99B841C951578003A3379 /* Lazy Data */,
-				B4C99B901C951578003A3379 /* Lazy DataTests */,
+				B4C99B841C951578003A3379 /* LazyData */,
+				B4C99B901C951578003A3379 /* LazyDataTests */,
 				B4C99B831C951578003A3379 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,7 +101,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B4C99B841C951578003A3379 /* Lazy Data */ = {
+		B4C99B841C951578003A3379 /* LazyData */ = {
 			isa = PBXGroup;
 			children = (
 				B4C99B851C951578003A3379 /* LazyData.h */,
@@ -107,20 +114,22 @@
 				B4123E7F1C95EE8600D2E0A3 /* LazyData+Insert.swift */,
 				B4123E831C95EEA300D2E0A3 /* LazyData+Update.swift */,
 			);
+			name = LazyData;
 			path = "Lazy Data";
 			sourceTree = "<group>";
 		};
-		B4C99B901C951578003A3379 /* Lazy DataTests */ = {
+		B4C99B901C951578003A3379 /* LazyDataTests */ = {
 			isa = PBXGroup;
 			children = (
 				B4C79D501C9D0B8C00817217 /* Color+CoreDataProperties.swift */,
 				B4C79D511C9D0B8C00817217 /* Color.swift */,
 				B4C79D521C9D0B8C00817217 /* Person+CoreDataProperties.swift */,
 				B4C79D531C9D0B8C00817217 /* Person.swift */,
-				B4C79D4D1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld */,
 				B4C99B911C951578003A3379 /* Lazy_DataTests.swift */,
+				B401AFCF1CA89B57005D989B /* LazyDataTest.xcdatamodeld */,
 				B4C99B931C951578003A3379 /* Info.plist */,
 			);
+			name = LazyDataTests;
 			path = "Lazy DataTests";
 			sourceTree = "<group>";
 		};
@@ -131,6 +140,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B401AFCD1CA89A85005D989B /* LazyData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +202,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B4C99B7C1C951578003A3379 /* Build configuration list for PBXProject "Lazy Data" */;
+			buildConfigurationList = B4C99B7C1C951578003A3379 /* Build configuration list for PBXProject "LazyData" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -215,6 +225,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B454D3CC1CA8946B00C710AD /* LICENSE in Resources */,
+				B454D3CA1CA8934400C710AD /* LazyData.podspec in Resources */,
 				B4123E041C953F1C00D2E0A3 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,6 +248,7 @@
 				B4123E961C9635AF00D2E0A3 /* LazyData+Fetch.swift in Sources */,
 				B4123E841C95EEA300D2E0A3 /* LazyData+Update.swift in Sources */,
 				B454D3C31CA65B4800C710AD /* LazyDataTableViewController.swift in Sources */,
+				B401AFD11CA89B57005D989B /* LazyDataTest.xcdatamodeld in Sources */,
 				B4123E801C95EE8600D2E0A3 /* LazyData+Insert.swift in Sources */,
 				B4123E021C953C3500D2E0A3 /* LazyData.swift in Sources */,
 				B4123E821C95EE9200D2E0A3 /* LazyData+Delete.swift in Sources */,
@@ -251,7 +264,6 @@
 				B4C99B921C951578003A3379 /* Lazy_DataTests.swift in Sources */,
 				B4C79D561C9D0B8C00817217 /* Person+CoreDataProperties.swift in Sources */,
 				B4C79D551C9D0B8C00817217 /* Color.swift in Sources */,
-				B4C79D4F1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld in Sources */,
 				B4C79D541C9D0B8C00817217 /* Color+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -421,7 +433,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B4C99B7C1C951578003A3379 /* Build configuration list for PBXProject "Lazy Data" */ = {
+		B4C99B7C1C951578003A3379 /* Build configuration list for PBXProject "LazyData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B4C99B941C951578003A3379 /* Debug */,
@@ -451,13 +463,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B4C79D4D1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld */ = {
+		B401AFCF1CA89B57005D989B /* LazyDataTest.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B4C79D4E1C9D0AD300817217 /* LazyDataTestModel.xcdatamodel */,
+				B401AFD01CA89B57005D989B /* LazyDataTest.xcdatamodel */,
 			);
-			currentVersion = B4C79D4E1C9D0AD300817217 /* LazyDataTestModel.xcdatamodel */;
-			path = LazyDataTestModel.xcdatamodeld;
+			currentVersion = B401AFD01CA89B57005D989B /* LazyDataTest.xcdatamodel */;
+			path = LazyDataTest.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

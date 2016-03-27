@@ -17,7 +17,7 @@
                BlueprintIdentifier = "B4C99B811C951578003A3379"
                BuildableName = "LazyData.framework"
                BlueprintName = "LazyData"
-               ReferencedContainer = "container:Lazy Data.xcodeproj">
+               ReferencedContainer = "container:LazyData.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "B4C99B8B1C951578003A3379"
                BuildableName = "LazyDataTests.xctest"
                BlueprintName = "LazyDataTests"
-               ReferencedContainer = "container:Lazy Data.xcodeproj">
+               ReferencedContainer = "container:LazyData.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "B4C99B811C951578003A3379"
             BuildableName = "LazyData.framework"
             BlueprintName = "LazyData"
-            ReferencedContainer = "container:Lazy Data.xcodeproj">
+            ReferencedContainer = "container:LazyData.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -67,7 +67,7 @@
             BlueprintIdentifier = "B4C99B811C951578003A3379"
             BuildableName = "LazyData.framework"
             BlueprintName = "LazyData"
-            ReferencedContainer = "container:Lazy Data.xcodeproj">
+            ReferencedContainer = "container:LazyData.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -85,7 +85,7 @@
             BlueprintIdentifier = "B4C99B811C951578003A3379"
             BuildableName = "LazyData.framework"
             BlueprintName = "LazyData"
-            ReferencedContainer = "container:Lazy Data.xcodeproj">
+            ReferencedContainer = "container:LazyData.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>
