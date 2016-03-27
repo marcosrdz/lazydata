@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 import CoreData
 
-public protocol LazyDataTableViewDataSource: class {
+@objc public protocol LazyDataTableViewDataSource: class {
     
     func lazyDataCellForRowAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell
     
     func lazyDataCellIdentifierForRowAtIndexPath(indexPath: NSIndexPath) -> String
     
-    func lazyDataCanEditRowAtIndexPath(indexPath: NSIndexPath) -> Bool
+    optional func lazyDataCanEditRowAtIndexPath(indexPath: NSIndexPath) -> Bool
     
-    func lazyDataContentDidChange()
+    optional func lazyDataContentDidChange()
     
 }
 
@@ -34,7 +34,8 @@ public protocol LazyDataTableViewDataSource: class {
     
     // MARK: - Initializer
     
-    public init?(tableView: UITableView, fetchedResultsController: NSFetchedResultsController) {
+    public
+    init?(tableView: UITableView, fetchedResultsController: NSFetchedResultsController) {
         do {
             try fetchedResultsController.performFetch()
             self.tableView = tableView
@@ -69,7 +70,10 @@ public protocol LazyDataTableViewDataSource: class {
     }
     
     public func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return dataSource?.lazyDataCanEditRowAtIndexPath(indexPath) ?? false
+        guard let lazyDataCanEditRowAtIndexPath = dataSource?.lazyDataCanEditRowAtIndexPath else {
+            return false
+        }
+        return lazyDataCanEditRowAtIndexPath(indexPath)
     }
     
     public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -102,7 +106,11 @@ public protocol LazyDataTableViewDataSource: class {
     
     public func controllerDidChangeContent(controller: NSFetchedResultsController) {
         tableView.endUpdates()
-        dataSource?.lazyDataContentDidChange()
+        
+        guard let lazyDataContentDidChange = dataSource?.lazyDataContentDidChange else {
+            return
+        }
+        lazyDataContentDidChange()
     }
     
 }
