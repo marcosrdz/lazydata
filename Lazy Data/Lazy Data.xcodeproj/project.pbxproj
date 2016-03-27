@@ -14,7 +14,7 @@
 		B4123E841C95EEA300D2E0A3 /* LazyData+Update.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E831C95EEA300D2E0A3 /* LazyData+Update.swift */; };
 		B4123E961C9635AF00D2E0A3 /* LazyData+Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E951C9635AF00D2E0A3 /* LazyData+Fetch.swift */; };
 		B4123E981C96363800D2E0A3 /* LazyData+FetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4123E971C96363800D2E0A3 /* LazyData+FetchedResultsController.swift */; };
-		B454D3C31CA65B4800C710AD /* LazyDataTableViewControllerDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B454D3C21CA65B4800C710AD /* LazyDataTableViewControllerDataSource.swift */; };
+		B454D3C31CA65B4800C710AD /* LazyDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B454D3C21CA65B4800C710AD /* LazyDataTableViewController.swift */; };
 		B4C79D4F1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D4D1C9D0AD300817217 /* LazyDataTestModel.xcdatamodeld */; };
 		B4C79D541C9D0B8C00817217 /* Color+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D501C9D0B8C00817217 /* Color+CoreDataProperties.swift */; };
 		B4C79D551C9D0B8C00817217 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C79D511C9D0B8C00817217 /* Color.swift */; };
@@ -41,7 +41,7 @@
 		B4123E831C95EEA300D2E0A3 /* LazyData+Update.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+Update.swift"; sourceTree = "<group>"; };
 		B4123E951C9635AF00D2E0A3 /* LazyData+Fetch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+Fetch.swift"; sourceTree = "<group>"; };
 		B4123E971C96363800D2E0A3 /* LazyData+FetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LazyData+FetchedResultsController.swift"; sourceTree = "<group>"; };
-		B454D3C21CA65B4800C710AD /* LazyDataTableViewControllerDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyDataTableViewControllerDataSource.swift; sourceTree = "<group>"; };
+		B454D3C21CA65B4800C710AD /* LazyDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyDataTableViewController.swift; sourceTree = "<group>"; };
 		B4C79D4E1C9D0AD300817217 /* LazyDataTestModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LazyDataTestModel.xcdatamodel; sourceTree = "<group>"; };
 		B4C79D501C9D0B8C00817217 /* Color+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B4C79D511C9D0B8C00817217 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 				B4123E811C95EE9200D2E0A3 /* LazyData+Delete.swift */,
 				B4123E951C9635AF00D2E0A3 /* LazyData+Fetch.swift */,
 				B4123E971C96363800D2E0A3 /* LazyData+FetchedResultsController.swift */,
-				B454D3C21CA65B4800C710AD /* LazyDataTableViewControllerDataSource.swift */,
+				B454D3C21CA65B4800C710AD /* LazyDataTableViewController.swift */,
 				B4123E7F1C95EE8600D2E0A3 /* LazyData+Insert.swift */,
 				B4123E831C95EEA300D2E0A3 /* LazyData+Update.swift */,
 			);
@@ -235,7 +235,7 @@
 			files = (
 				B4123E961C9635AF00D2E0A3 /* LazyData+Fetch.swift in Sources */,
 				B4123E841C95EEA300D2E0A3 /* LazyData+Update.swift in Sources */,
-				B454D3C31CA65B4800C710AD /* LazyDataTableViewControllerDataSource.swift in Sources */,
+				B454D3C31CA65B4800C710AD /* LazyDataTableViewController.swift in Sources */,
 				B4123E801C95EE8600D2E0A3 /* LazyData+Insert.swift in Sources */,
 				B4123E021C953C3500D2E0A3 /* LazyData.swift in Sources */,
 				B4123E821C95EE9200D2E0A3 /* LazyData+Delete.swift in Sources */,

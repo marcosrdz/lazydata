@@ -18,7 +18,7 @@ public class LazyData: NSObject {
     // MARK: - Singleton
     /*This is the instance, of LazyData, that will be used all the time. */
     public static let sharedInstance: LazyData = LazyData()
-    private var dataModelName: String = ""
+    private var dataModelName: String?
     private var storeType: LazyDataStoreType = .Persistent
     
     private lazy var managedObjectModel: NSManagedObjectModel = {
@@ -26,16 +26,24 @@ public class LazyData: NSObject {
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
     
-    public class func configure(dataModelName dataModelName: String, storeType: LazyDataStoreType) {
+    public class func configure(dataModelName dataModelName: String? = nil, storeType: LazyDataStoreType) {
         /* Reset the managed object context if the passed storeType is temporary, or if it previously was persistent, but it'll now change to temporary. */
         if storeType == .Temporary || (LazyData.sharedInstance.storeType == .Persistent && storeType == .Temporary) {
             LazyData.reset()
             LazyData.save()
         }
-        /* */
+        
+        
+        /* If there is no dataModelName passed, I will try to find for one and use it. */
+        if let dataModelName = dataModelName {
+            LazyData.sharedInstance.dataModelName = dataModelName
+        }
+        else {
+            let filePath = NSBundle.mainBundle().pathsForResourcesOfType("momd", inDirectory: nil) as [NSString]
+            LazyData.sharedInstance.dataModelName = filePath.last?.lastPathComponent
+        }
         
         LazyData.sharedInstance.storeType = storeType
-        LazyData.sharedInstance.dataModelName = dataModelName
     }
     
     // MARK: - Core Data Boilerplate Code
