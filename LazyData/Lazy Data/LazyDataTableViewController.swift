@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-protocol LazyDataTableViewDataSource: class {
+public protocol LazyDataTableViewDataSource: class {
     
     func lazyDataCellForRowAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell
     
@@ -26,7 +26,11 @@ protocol LazyDataTableViewDataSource: class {
     
     private var fetchedResultsController: NSFetchedResultsController
     private var tableView: UITableView
-    weak var dataSource: LazyDataTableViewDataSource?
+    public weak var dataSource: LazyDataTableViewDataSource? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     // MARK: - Initializer
     

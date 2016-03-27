@@ -11,7 +11,7 @@ import CoreData
 
 extension LazyData {
     
-    class func fetchedResultsController(entityName entityName: String, predicate: NSPredicate? = nil, fetchLimit: Int? = nil, offset: Int? = nil, sortBy: [NSSortDescriptor]? = nil, separateSectionsByKey: String? = nil, cacheName: String? = nil) -> NSFetchedResultsController {
+    public class func fetchedResultsController(entityName entityName: String, predicate: NSPredicate? = nil, fetchLimit: Int? = nil, offset: Int? = nil, sortBy: [NSSortDescriptor]? = nil, separateSectionsByKey: String? = nil, cacheName: String? = nil) -> NSFetchedResultsController {
         let fetchRequest = NSFetchRequest(entityName: entityName)
         fetchRequest.predicate = predicate
         
