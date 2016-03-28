@@ -22,7 +22,7 @@ public class LazyData: NSObject {
     private var storeType: LazyDataStoreType = .Persistent
     
     private lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = NSBundle.mainBundle().URLForResource(LazyData.sharedInstance.dataModelName, withExtension: "momd")!
+        let modelURL = NSBundle.mainBundle().URLForResource(LazyData.sharedInstance.dataModelName, withExtension: nil)!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
     
@@ -39,8 +39,18 @@ public class LazyData: NSObject {
             LazyData.sharedInstance.dataModelName = dataModelName
         }
         else {
-            let filePath = NSBundle.mainBundle().pathsForResourcesOfType("momd", inDirectory: nil) as [NSString]
-            LazyData.sharedInstance.dataModelName = filePath.last?.lastPathComponent
+            // Could be *.mom or *.momd
+            var filePath = NSBundle.mainBundle().pathsForResourcesOfType("momd", inDirectory: nil) as [NSString]
+            if filePath.count > 0 {
+                LazyData.sharedInstance.dataModelName = filePath.last?.lastPathComponent
+            }
+            else {
+                filePath = NSBundle.mainBundle().pathsForResourcesOfType("mom", inDirectory: nil) as [NSString]
+                if filePath.count > 0 {
+                    LazyData.sharedInstance.dataModelName = filePath.last?.lastPathComponent
+                }
+            }
+            
         }
         
         LazyData.sharedInstance.storeType = storeType
