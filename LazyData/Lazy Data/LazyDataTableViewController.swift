@@ -12,7 +12,7 @@ import CoreData
 
 @objc public protocol LazyDataTableViewDataSource: class {
     
-    func lazyDataCellForRowAtIndexPath(cell cell: UITableViewCell, managedObject: NSManagedObjectContext?, indexPath: NSIndexPath)
+    func lazyDataCellForRowAtIndexPath(cell cell: UITableViewCell, managedObject: NSManagedObject?, indexPath: NSIndexPath)
     
     func lazyDataCellIdentifierForRowAtIndexPath(indexPath: NSIndexPath) -> String
     
@@ -72,7 +72,7 @@ import CoreData
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let managedObjectAtIndexPath = fetchedResultsController.objectAtIndexPath(indexPath) as? NSManagedObjectContext
+        let managedObjectAtIndexPath = fetchedResultsController.objectAtIndexPath(indexPath) as? NSManagedObject
         
         guard let cellIdentifier = dataSource?.lazyDataCellIdentifierForRowAtIndexPath(indexPath) else {
             fatalError("LazyDataTableViewController was unable to obtain a cell identifier for:  section \(indexPath.section), row: \(indexPath.row)")
