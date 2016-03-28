@@ -22,7 +22,7 @@ public class LazyData: NSObject {
     private var storeType: LazyDataStoreType = .Persistent
     
     private lazy var managedObjectModel: NSManagedObjectModel = {
-        let modelURL = NSBundle(forClass: self.dynamicType).URLForResource(LazyData.sharedInstance.dataModelName, withExtension: "momd")!
+        let modelURL = NSBundle.mainBundle().URLForResource(LazyData.sharedInstance.dataModelName, withExtension: "momd")!
         return NSManagedObjectModel(contentsOfURL: modelURL)!
     }()
     
