@@ -12,7 +12,7 @@ import CoreData
 
 @objc public protocol LazyDataTableViewDataSource: class {
     
-    func lazyDataCellForRowAtIndexPath(indexPath: NSIndexPath) -> UITableViewCell
+    func lazyDataCellForRowAtIndexPath(cell cell: UITableViewCell, managedObject: NSManagedObjectContext?, indexPath: NSIndexPath)
     
     func lazyDataCellIdentifierForRowAtIndexPath(indexPath: NSIndexPath) -> String
     
@@ -24,7 +24,18 @@ import CoreData
 
 @objc public class LazyDataTableViewController: NSObject, NSFetchedResultsControllerDelegate, UITableViewDataSource {
     
-    private var fetchedResultsController: NSFetchedResultsController
+    public var fetchedResultsController: NSFetchedResultsController {
+        didSet {
+            do {
+                try fetchedResultsController.performFetch()
+                self.tableView.dataSource = self
+                self.fetchedResultsController.delegate = self
+            }
+            catch {
+                print("Unable to initialize. There was an error when running performFetch() on the referenced fetchedResultsController.")
+            }
+        }
+    }
     private var tableView: UITableView
     public weak var dataSource: LazyDataTableViewDataSource? {
         didSet {
@@ -61,11 +72,14 @@ import CoreData
     }
     
     public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let managedObjectAtIndexPath = fetchedResultsController.objectAtIndexPath(indexPath) as? NSManagedObjectContext
+        
         guard let cellIdentifier = dataSource?.lazyDataCellIdentifierForRowAtIndexPath(indexPath) else {
-            fatalError("LazyDataTableViewController dataSource has not been set.")
+            fatalError("LazyDataTableViewController was unable to obtain a cell identifier for:  section \(indexPath.section), row: \(indexPath.row)")
         }
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath)
+        dataSource?.lazyDataCellForRowAtIndexPath(cell: cell, managedObject: managedObjectAtIndexPath, indexPath: indexPath)
         return cell
     }
     
@@ -77,7 +91,10 @@ import CoreData
     }
     
     public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return fetchedResultsController.sectionIndexTitles[section]
+        if fetchedResultsController.sectionIndexTitles.count >= section && fetchedResultsController.sectionIndexTitles.count != 0 {
+            return fetchedResultsController.sectionIndexTitles[section]
+        }
+        return nil
     }
     
     public func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
