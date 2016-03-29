@@ -19,12 +19,10 @@ import CoreData
     optional func lazyDataCanEditRowAtIndexPath(indexPath: NSIndexPath) -> Bool
     
     optional func lazyDataContentDidChange()
-    
-    optional func lazyDataCommitEditingStyle(editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath)
-    
+        
 }
 
-@objc public class LazyDataTableViewController: NSObject, NSFetchedResultsControllerDelegate, UITableViewDataSource {
+@objc public class LazyDataTableViewController: NSObject, NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate {
     
     public var fetchedResultsController: NSFetchedResultsController {
         didSet {
@@ -38,12 +36,16 @@ import CoreData
             }
         }
     }
+    
     private var tableView: UITableView
+    
     public weak var dataSource: LazyDataTableViewDataSource? {
         didSet {
             tableView.reloadData()
         }
     }
+    
+    public var customEditActions: Bool = false
     
     // MARK: - Initializer
     
@@ -92,12 +94,6 @@ import CoreData
         return lazyDataCanEditRowAtIndexPath(indexPath)
     }
     
-    public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if let lazyDataCommitEditingStyle = dataSource?.lazyDataCommitEditingStyle {
-            lazyDataCommitEditingStyle(editingStyle, forRowAtIndexPath: indexPath)
-        }
-    }
-    
     public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if fetchedResultsController.sectionIndexTitles.count >= section && fetchedResultsController.sectionIndexTitles.count != 0 {
             return fetchedResultsController.sectionIndexTitles[section]
@@ -107,6 +103,23 @@ import CoreData
     
     public func sectionIndexTitlesForTableView(tableView: UITableView) -> [String]? {
         return fetchedResultsController.sectionIndexTitles
+    }
+    
+    // MARK: - UITableViewDelegate
+    
+    public func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        if !customEditActions {
+            guard let managedObject = fetchedResultsController.objectAtIndexPath(indexPath) as? NSManagedObject else {
+                return nil
+            }
+            
+            let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: { (action: UITableViewRowAction, indexPath: NSIndexPath) in
+                LazyData.deleteObject(managedObject)
+            })
+            
+            return [deleteAction]
+        }
+        return nil
     }
     
     // MARK: - NSFetchedResultsControllerDelegate
