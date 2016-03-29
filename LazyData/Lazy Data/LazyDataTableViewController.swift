@@ -19,7 +19,9 @@ import CoreData
     optional func lazyDataCanEditRowAtIndexPath(indexPath: NSIndexPath) -> Bool
     
     optional func lazyDataContentDidChange()
-        
+    
+    optional func lazyDataDeleteObject(managedObject: NSManagedObject, forRowAtIndexPath indexPath: NSIndexPath)
+    
 }
 
 @objc public class LazyDataTableViewController: NSObject, NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate {
@@ -45,7 +47,7 @@ import CoreData
         }
     }
     
-    public var customEditActions: Bool = false
+    public var useCustomEditActions: Bool = false
     
     // MARK: - Initializer
     
@@ -94,6 +96,17 @@ import CoreData
         return lazyDataCanEditRowAtIndexPath(indexPath)
     }
     
+    public func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        guard let managedObject = fetchedResultsController.objectAtIndexPath(indexPath) as? NSManagedObject else {
+            return
+        }
+        if editingStyle == .Delete {
+            if let lazyDataDeleteObject = dataSource?.lazyDataDeleteObject {
+                lazyDataDeleteObject(managedObject, forRowAtIndexPath: indexPath)
+            }
+        }
+    }
+    
     public func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if fetchedResultsController.sectionIndexTitles.count >= section && fetchedResultsController.sectionIndexTitles.count != 0 {
             return fetchedResultsController.sectionIndexTitles[section]
@@ -108,16 +121,8 @@ import CoreData
     // MARK: - UITableViewDelegate
     
     public func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
-        if !customEditActions {
-            guard let managedObject = fetchedResultsController.objectAtIndexPath(indexPath) as? NSManagedObject else {
-                return nil
-            }
+        if !useCustomEditActions {
             
-            let deleteAction = UITableViewRowAction(style: .Default, title: "Delete", handler: { (action: UITableViewRowAction, indexPath: NSIndexPath) in
-                LazyData.deleteObject(managedObject)
-            })
-            
-            return [deleteAction]
         }
         return nil
     }
