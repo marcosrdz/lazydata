@@ -24,7 +24,7 @@ import CoreData
     
 }
 
-@objc public class LazyDataTableViewController: NSObject, NSFetchedResultsControllerDelegate, UITableViewDataSource, UITableViewDelegate {
+@objc public class LazyDataTableViewController: NSObject, NSFetchedResultsControllerDelegate, UITableViewDataSource {
     
     public var fetchedResultsController: NSFetchedResultsController {
         didSet {
